@@ -1,12 +1,127 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Mezuniyet Giriş Paneli</title>
+    <style>
+        /* Arka Plan Ayarları */
+        body {
+            background-image: url('sınıf1.png'); /* Resmin aynı klasörde olduğundan emin ol */
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: white;
+        }
+
+        /* Başlık Alanı */
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        h1 span {
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 10px 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+        }
+
+        /* Form Kutusu */
+        .login-container {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px); /* Arka planı bulanıklaştırır, modern görünür */
+            padding: 40px;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            text-align: center;
+        }
+
+        input[type="password"] {
+            padding: 12px;
+            width: 250px;
+            border-radius: 5px;
+            border: none;
+            outline: none;
+            font-size: 16px;
+        }
+
+        button {
+            padding: 12px 25px;
+            margin-left: 10px;
+            background-color: #27ae60;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        button:hover {
+            background-color: #2ecc71;
+        }
+
+        #mesaj {
+            margin-top: 20px;
+            font-weight: bold;
+            height: 20px; /* Mesaj yokken boşluk bozulmasın diye */
+        }
+    </style>
 </head>
-<body style="width: 100%; max-width: 800px;">
-    <video controls autoplay muted loop  src="uğur_hoca.mp4" ></video>
-    <a href="ses.html">Sezen Aksu</a>
+<body>
+
+    <h1>
+        <span>2025/2026 FSMFL 12/B MEZUNLARI</span>
+    </h1>
+
+    <div class="login-container">
+        <h3>Özel İçerik İçin Şifre Giriniz</h3>
+        
+        <input type="password" id="sifreInput" placeholder="Şifreniz...">
+        <button onclick="kontrolEt()">Giriş Yap</button>
+
+        <p id="mesaj"></p>
+    </div>
+
+    <script>
+        function kontrolEt() {
+            const girilenSifre = document.getElementById("sifreInput").value;
+            const dogruSifre = "miçonun yarrrağı"; // Şifren bu!
+            const hedefLink = "deneme.html"; // Yönlendirilecek sayfa
+            const mesajAlani = document.getElementById("mesaj");
+
+            if (girilenSifre === dogruSifre) {
+                mesajAlani.style.color = "#2ecc71";
+                mesajAlani.innerText = "Giriş Başarılı! Yönlendiriliyorsunuz...";
+                
+                // 1 saniye sonra yönlendir (mesajın görülmesi için)
+                setTimeout(function() {
+                    window.location.href = hedefLink;
+                }, 1000);
+            } else {
+                mesajAlani.style.color = "#e74c3c";
+                mesajAlani.innerText = "Hatalı şifre! Tekrar deneyiniz.";
+                document.getElementById("sifreInput").value = ""; // Kutuyu temizle
+            }
+        }
+
+        // Enter tuşuna basınca da giriş yapması için:
+        document.getElementById("sifreInput").addEventListener("keypress", function(event) {
+            if (event.key === "Enter") {
+                kontrolEt();
+            }
+        });
+    </script>
+
 </body>
 </html>
