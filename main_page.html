@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>12/B 25/26 MEZUNLARI</title>
+</head>
+<body style="
+    background-image: url('sınıf9_B.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    margin: 0;
+">
+
+<h1 style="
+    text-align: center; 
+    margin-top: 30px; 
+    margin-bottom: 15px;
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+">
+    <span style="
+        background: rgba(0, 0, 0, 0.7); 
+        color: white; 
+        padding: 8px 20px; /* Boşlukları azalttık */
+        font-size: 22px;   /* Yazı boyutunu küçülttük */
+        border-radius: 50px; 
+        border: 1px solid rgba(255, 255, 255, 0.1); 
+        backdrop-filter: blur(10px); 
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4); 
+        display: inline-block;
+        letter-spacing: 1px; /* Harf arasını daralttık */
+        text-transform: uppercase;
+    ">
+        2025/2026 FSMFL 12/B MEZUNLARI
+    </span>
+</h1>
+
+<style>
+    /* Linklerin toplandığı ana ızgara (Grid) */
+    .link-grid {
+        display: grid;
+        /* Genişlik 280px'den 220px'e düşürüldü */
+        grid-template-columns: repeat(2, 220px); 
+        gap: 20px; 
+        justify-content: center; 
+        margin-top: 40px;
+    }
+
+    /* Linklerin genel stili */
+    .ozel-link {
+        text-decoration: none;
+        color: white;
+        font-family: 'Segoe UI', sans-serif;
+        font-size: 18px;
+        font-weight: 500;
+        background: rgba(255, 255, 255, 0.1);
+        /* İç boşluk 15px'den 10px'e düşürüldü */
+        padding: 10px; 
+        border-radius: 12px;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        text-align: center;
+        transition: all 0.3s ease;
+        backdrop-filter: blur(8px);
+        display: block; 
+    }
+
+    /* Mouse ile üzerine gelince efektler */
+    .ozel-link:hover {
+        background: rgba(255, 255, 255, 0.25);
+        transform: scale(1.05); 
+        box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+        border-color: #f1c40f; 
+    }
+
+    /* TOP SECRET için özel kırmızı vurgu */
+    .secret-link {
+        border-color: rgba(231, 76, 60, 0.4);
+    }
+    .secret-link:hover {
+        border-color: #e74c3c;
+        color: #e74c3c;
+    }
+
+    /* Mobilde (telefonlarda) 2 sütunu tek sütuna düşürür */
+    @media (max-width: 600px) {
+        .link-grid {
+            grid-template-columns: repeat(1, 1fr);
+            padding: 0 20px;
+        }
+    }
+</style>
+
+<div class="link-grid">
+    <a href="video.html" class="ozel-link">Uğur Yükselen</a>
+    <a href="video_Amir.html" class="ozel-link">Sir Amir Fırat</a>
+    <a href="video_ht.html" class="ozel-link">Hüseyin Terzi</a>
+    <a href="galari.html" class="ozel-link">Hatıralar</a>
+    <a href="vidyo_afd.html" class="ozel-link">Ali Fuat Dizdar</a>
+    <a href="güvenlik.html" class="ozel-link secret-link">㊙️ TOP SECRET</a>
+</div>
+   
+    <a href="ses.html">Sezen Aksu</a>
+</body>
+</html>

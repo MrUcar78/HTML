@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>12/B Mezuniyet Galerisi</title>
+    <style>
+        /* --- SAYFA GENEL STİLLERİ --- */
+        body {
+            background-color: #1a1a1a;
+            color: white;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #f1c40f;
+        }
+
+        /* --- GALERİ IZGARA YAPISI --- */
+        .galeri-konteyner {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .galeri-item {
+            overflow: hidden;
+            border-radius: 10px;
+            border: 3px solid #333;
+            transition: transform 0.3s, border-color 0.3s;
+            cursor: pointer; /* Tıklanabilir olduğunu gösterir */
+        }
+
+        .galeri-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            display: block;
+            transition: filter 0.3s;
+        }
+
+        /* Üzerine gelince efektler */
+        .galeri-item:hover {
+            transform: scale(1.03);
+            border-color: #f1c40f;
+        }
+        
+        .galeri-item:hover img {
+            filter: brightness(1.1); /* Resmi hafif parlatır */
+        }
+
+
+        /* --- LIGHTBOX (BÜYÜK RESİM MODALI) STİLLERİ --- */
+        .modal {
+            display: none; /* Başlangıçta gizli */
+            position: fixed; /* Sayfa kaydırılsa da sabit kalır */
+            z-index: 1000; /* En üstte görünmesi için */
+            padding-top: 50px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.9); /* Arka planı karartır */
+            /* İçeriği ortalamak için Flexbox */
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Büyük Resim Stili */
+        .modal-icerik {
+            margin: auto;
+            display: block;
+            max-width: 90%; /* Ekranın %90'ından büyük olamaz */
+            max-height: 85vh; /* Ekran yüksekliğinin %85'inden büyük olamaz */
+            border-radius: 5px;
+            border: 3px solid #f1c40f;
+            box-shadow: 0 0 20px rgba(0,0,0,0.5);
+            animation-name: zoom; /* Açılış efekti */
+            animation-duration: 0.3s;
+        }
+
+        /* Kapatma Butonu (X) */
+        .kapat {
+            position: absolute;
+            top: 20px;
+            right: 35px;
+            color: #f1c40f;
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        .kapat:hover,
+        .kapat:focus {
+            color: #bbb;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        /* Açılış Animasyonu (Zoom Efekti) */
+        @keyframes zoom {
+            from {transform:scale(0)}
+            to {transform:scale(1)}
+        }
+
+        .geri-buton {
+            display: inline-block;
+            margin-top: 30px;
+            color: #aaa;
+            text-decoration: none;
+            padding: 10px;
+            border: 1px solid #333;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>🎓 Mezuniyet Hatıraları</h1>
+    <p style="color: #aaa;">Büyütmek için resimlere tıklayınız.</p>
+
+    <div class="galeri-konteyner">
+        <div class="galeri-item"><img src="sınıf9_B.png" alt="Mezuniyet Anısı 1"></div>
+        <div class="galeri-item"><img src="sınıf1.png" alt="Mezuniyet Anısı 2"></div>
+        <div class="galeri-item"><img src="muzun_dna.jpeg" alt="Mezuniyet Anısı 3"></div>
+        <div class="galeri-item"><img src="AFD_SINIF.jpeg" alt="Mezuniyet Anısı 4"></div>
+        <div class="galeri-item"><img src="sercan_sınıf.jpeg" alt="Mezuniyet Anısı 5"></div>
+        <div class="galeri-item"><img src="iftar.jpeg" alt="Mezuniyet Anısı 6"></div>
+        <div class="galeri-item"><img src="İFTAR1.jpeg" alt="Mezuniyet Anısı 7"></div>
+        <div class="galeri-item"><img src="hüsüeyin_terzi_ev.jpeg" alt="Mezuniyet Anısı 8"></div>
+        <div class="galeri-item"><img src="Hüseyin_Terzi_ev2.jpeg" alt="Mezuniyet Anısı 9"></div>
+        <div class="galeri-item"><img src="piknik.jpeg" alt="Mezuniyet Anısı 10"></div>
+        <div class="galeri-item"><img src="erkekler_grup_1.jpeg" alt="Mezuniyet Anısı 11"></div>
+        <div class="galeri-item"><img src="fizikçiler.jpeg" alt="Mezuniyet Anısı 12"></div>
+        <div class="galeri-item"><img src="1.jpeg" alt="Mezuniyet Anısı 13"></div>
+        <div class="galeri-item"><img src="2.jpeg" alt="Mezuniyet Anısı 14"></div>
+        <div class="galeri-item"><img src="3.jpeg" alt="Mezuniyet Anısı 15"></div>
+        <div class="galeri-item"><img src="4.jpeg" alt="Mezuniyet Anısı 16"></div>
+        <div class="galeri-item"><img src="5.jpeg" alt="Mezuniyet Anısı 17"></div>
+        <div class="galeri-item"><img src="6.jpeg" alt="Mezuniyet Anısı 18"></div>
+        <div class="galeri-item"><img src="7.jpeg" alt="Mezuniyet Anısı 19"></div>
+        <div class="galeri-item"><img src="8.jpeg" alt="Mezuniyet Anısı 20"></div>
+        <div class="galeri-item"><img src="9.jpeg" alt="Mezuniyet Anısı 21"></div>
+        <div class="galeri-item"><img src="10.jpeg" alt="Mezuniyet Anısı 22"></div>
+        <div class="galeri-item"><img src="11.jpeg" alt="Mezuniyet Anısı 23"></div>
+        <div class="galeri-item"><img src="12.jpeg" alt="Mezuniyet Anısı 24"></div>
+        <div class="galeri-item"><img src="13.jpeg" alt="Mezuniyet Anısı 25"></div>
+        </div>
+
+    <div id="myModal" class="modal">
+        <span class="kapat">&times;</span>
+        <img class="modal-icerik" id="img01">
+    </div>
+
+    <br>
+    <a href="main_page.html" class="geri-buton">← Giriş Sayfasına Dön</a>
+
+    <script>
+        // Gerekli elemanları seçelim
+        const modal = document.getElementById('myModal');
+        const modalImg = document.getElementById("img01");
+        const kapatSpan = document.getElementsByClassName("kapat")[0];
+        // Galerideki tüm resimleri seçelim
+        const galeriResimleri = document.querySelectorAll('.galeri-item img');
+
+        // Her bir küçük resme tıklama olayı ekleyelim
+        galeriResimleri.forEach(resim => {
+            resim.addEventListener('click', function() {
+                modal.style.display = "flex"; // Modalı görünür yap ve flex ile ortala
+                modalImg.src = this.src; // Tıklanan resmin kaynağını büyük resme aktar
+            });
+        });
+
+        // Kapatma düğmesine (X) basınca kapat
+        kapatSpan.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        // Siyah arka plana tıklayınca da kapansın (Kullanım kolaylığı için)
+        modal.onclick = function(event) {
+             if (event.target === modal) { // Eğer tıklanan yer resim değil de arka plansa
+                modal.style.display = "none";
+             }
+        }
+    </script>
+
+</body>
+</html>

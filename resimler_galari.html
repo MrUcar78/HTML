@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>12/B Mezuniyet Galerisi</title>
+    <style>
+        body {
+            background-color: #1a1a1a; /* Koyu modern arka plan */
+            color: white;
+            font-family: sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        /* Galeri Izgarası (Grid) */
+        .galeri-konteyner {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px; /* Resimler arası boşluk */
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Resimlerin Kutusu */
+        .galeri-item {
+            overflow: hidden;
+            border-radius: 10px;
+            border: 3px solid #333;
+            transition: transform 0.3s, border-color 0.3s;
+            cursor: pointer;
+        }
+
+        /* Resimlerin Kendisi */
+        .galeri-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover; /* Resimleri bozmadan kutuya sığdırır */
+            display: block;
+        }
+
+        /* Üzerine gelince efektler */
+        .galeri-item:hover {
+            transform: scale(1.05); /* Hafif büyütme */
+            border-color: #f1c40f; /* Kenarlık sarı olur */
+        }
+
+        .geri-buton {
+            display: inline-block;
+            margin-top: 30px;
+            color: #aaa;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>🎓 Mezuniyet Hatıraları</h1>
+
+    <div class="galeri-konteyner">
+        <div class="galeri-item"><img src="hüsüeyin_terzi_ev.jpeg" alt="Mezuniyet"></div>
+        <div class="galeri-item"><img src="Hüseyin_Terzi_ev2.jpeg" alt="Mezuniyet"></div>
+        <div class="galeri-item"><img src="iftar.jpeg" alt="Mezuniyet"></div>
+        <div class="galeri-item"><img src="İFTAR1.jpeg" alt="Mezuniyet"></div>
+        <div class="galeri-item"><img src="AFD_SINIF.jpeg" alt="Mezuniyet"></div>
+        <div class="galeri-item"><img src="piknik.jpeg" alt="Mezuniyet"></div>
+    </div>
+
+    <br>
+    <a href="index.html" class="geri-buton">← Ana Sayfaya Dön</a>
+
+</body>
+</html>
