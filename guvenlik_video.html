@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GÜVENLİK KAYDI</title>
+    <style>
+        body {
+            background-color: #0a0a0a;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: sans-serif;
+        }
+        .video-wrapper {
+            padding: 10px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            box-shadow: 0 0 50px rgba(231, 76, 60, 0.3);
+            border: 1px solid rgba(231, 76, 60, 0.2);
+        }
+        video { border-radius: 15px; display: block; }
+        .back-btn {
+            margin-top: 20px;
+            color: rgba(255, 255, 255, 0.5);
+            text-decoration: none;
+            font-size: 14px;
+        }
+        .back-btn:hover { color: white; }
+    </style>
+</head>
+<body>
+    <div class="video-wrapper">
+        <video controls autoplay src="güvenlik_durumu.mp4" width="700"></video>
+    </div>
+    <a href="index.html" class="back-btn">← Ana Sayfaya Dön</a>
+</body>
+</html>
