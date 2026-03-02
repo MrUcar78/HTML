@@ -38,6 +38,86 @@
 </h1>
 
 <style>
+    /* Sol Alt Köşe Veda Notu */
+    .farewell-note {
+        position: fixed;
+        bottom: 20px;
+        left: 20px; /* Sol köşe */
+        font-family: 'Segoe UI', 'Georgia', serif; /* Biraz daha zarif bir font */
+        font-size: 14px;
+        font-style: italic; /* Duygusal bir hava katmak için italik */
+        color: rgba(255, 255, 255, 0.7);
+        background: rgba(0, 0, 0, 0.5);
+        padding: 8px 18px;
+        border-radius: 30px;
+        backdrop-filter: blur(8px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        z-index: 10000;
+        pointer-events: none; /* Mouse ile üzerine gelindiğinde tıklanmasın, sadece orada dursun */
+        letter-spacing: 0.5px;
+        transition: opacity 0.3s ease;
+    }
+
+    /* Mobilde çok kalabalık yapmaması için ufaltma */
+    @media (max-width: 600px) {
+        .farewell-note {
+            font-size: 10px;
+            padding: 5px 12px;
+            bottom: 10px;
+            left: 10px;
+        }
+    }
+</style>
+
+<div class="farewell-note">
+    Bir Gün Tekrar Görüşmek Dileği İle..
+</div>
+
+<style>
+    /* Daha belirgin ve büyük İmza (Developed By) Stili */
+    .developer-signature {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        font-family: 'Segoe UI', sans-serif;
+        font-size: 15px; /* Boyut bir tık büyütüldü */
+        color: rgba(255, 255, 255, 0.85); /* Daha koyu/net beyaz (daha az saydam) */
+        background: rgba(0, 0, 0, 0.7); /* Arka plan daha koyu siyah yapıldı */
+        padding: 8px 18px; /* İç boşluk artırıldı */
+        border-radius: 30px;
+        backdrop-filter: blur(10px);
+        border: 1.5px solid rgba(255, 255, 255, 0.3); /* Kenarlık daha belirgin */
+        text-decoration: none;
+        transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        z-index: 10000;
+        letter-spacing: 0.5px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    }
+
+    .developer-signature:hover {
+        color: #f1c40f; /* Beşiktaş/Mezuniyet sarısı */
+        background: #000; /* Tam siyah arka plan */
+        border-color: #f1c40f;
+        transform: scale(1.1) translateY(-5px); /* Daha belirgin büyüme efekti */
+        box-shadow: 0 8px 25px rgba(241, 196, 15, 0.4);
+    }
+
+    .developer-signature span {
+        font-weight: 800; /* İsim daha kalın */
+        text-transform: uppercase; /* İsmi büyük harf yaparak vurguladık */
+    }
+</style>
+
+<div class="developer-signature">
+    Developed By <span>Recep Uçar</span>
+</div>
+
+<div class="developer-signature">
+    Developed By <span>Recep Uçar</span>
+</div>
+
+
+<style>
     /* Linklerin toplandığı ana ızgara (Grid) */
     .link-grid {
         display: grid;
@@ -93,12 +173,13 @@
 </style>
 
 <div class="link-grid">
-    <a href="video.html" class="ozel-link">Uğur Yükselen</a>
+    <a href="video.html-" class="ozel-link">Uğur Yükselen</a>
     <a href="video_Amir.html" class="ozel-link">Sir Amir Fırat</a>
-    <a href="video_ht.html" class="ozel-link">Hüseyin Terzi</a>
+    <a href="video_ht.html-" class="ozel-link">Hüseyin Terzi</a>
     <a href="galari.html" class="ozel-link">Hatıralar</a>
-    <a href="vidyo_afd.html" class="ozel-link">Ali Fuat Dizdar</a>
-    <a href="guvenlik_giris.html" class="ozel-link secret-link">㊙️ TOP SECRET</a>
+    <a href="vidyo_afd.html-" class="ozel-link">Ali Fuat Dizdar</a>
+    <a href="video_dilenci.html" class="ozel-link">Bir Baş Yapıt</a>
+    <a href="guvenlik_giris.html-" class="ozel-link secret-link">㊙️ TOP SECRET</a>
 </div>
 
 
